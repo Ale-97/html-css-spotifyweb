@@ -1,0 +1,24 @@
+.row-column{
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 60px);
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: greenyellow;
+}
+.col-xs-10 .top-bar{
+    height: 60px;
+    min-height: 60px;
+    background-color: blueviolet;
+}
+.col-xs-10 .content{
+    overflow-y: scroll;
+    background-color: green ;
+}
+.col-xs-2{
+    background-color: cyan;
+}
