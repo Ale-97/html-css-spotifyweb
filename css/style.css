@@ -18,7 +18,7 @@ footer{
     justify-content: space-between;
     color: white;
 }
-.col-xs-10 .top-bar{
+.col-lg-10 .top-bar{
     height: 60px;
     min-height: 60px;
     display: flex;
@@ -26,20 +26,21 @@ footer{
     align-items: center;
     background-color: rgb(8, 11, 18);
 }
-.col-xs-10 .conteiner{
+.col-lg-10 .container-fluid {
     overflow-y: scroll;
     height: calc(100% - 60px);
     background-color: rgb(20, 25, 34);
+    padding: 10px;
 }
 /*--- NAV-BAR POSTA A SINISTRA ---*/
-header .col-xs-2{
+header > .row > .col-lg-2{
     background-color: black;
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
     font-size: 13px;
     color: gray;
-    padding:10px 0 10px 0;
+    padding:10px ;
 }
 /* LAYOUT COMUNI NAV-BAR */
 ul{
@@ -92,8 +93,10 @@ li {
 .nav-bar-bottom i {
     margin-right: 10px;
 }
-
-/* BARRA SUPERIORE */
+.nav-bar-bottom > div:first-child:hover{
+    color: white;
+}
+/*--- BARRA SUPERIORE ---*/
 .upgrade{
     text-decoration: none;
     color: white;
@@ -101,6 +104,100 @@ li {
     border: 1px solid white;
     border-radius: 20px;
     padding: 7px 30px;
+}
+.upgrade:hover{
+    font-size: 17px;
+}
+/*--- CONTENUTO DELLA PAGINA ---*/
+.container-fluid  ul{
+    display: flex;
+    justify-content: center;
+    color: gray;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+.container-fluid li {
+    margin-right: 15px;
+}
+li:hover{
+    color: white;
+}
+.album > div[class^="img-"]{
+    height: 12vw;
+    width: 12vw;
+    background-size: cover;
+}
+.playlist .title{
+    color: white;
+}
+div[class^="img-"]:hover > div{
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div[class^="img-"]:hover i{
+    color: rgba(255, 255, 255, 1);
+  
+}
+header .fa-play-circle{
+    color: rgba(255, 255, 255, 0);
+    font-size: 50px;
+}
+.album{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.album > div[class^="img-"] + div{
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title-album{
+    color: white;
+    font-size: 15px;
+}
+.title-album + div{
+    color: gray;
+    font-size: 12px;
+}
+.playlist > div:last-child div[class^="img-"] > div{
+    border-radius: 50%;
+}
+.img-1{
+    background-image: url(../img/metal_lifting.jpg);
+}
+.img-2{
+    background-image: url(../img/stranger.jpeg);
+}
+.img-3{
+    background-image: url(../img/aquietplace.jpeg);
+}
+.img-4{
+    background-image: url(../img/split.jpeg);
+}
+.img-5{
+    background-image: url(../img/cure.jpeg);
+}
+.img-6{
+    background-image: url(../img/sinister.jpeg);
+}
+.img-7{
+    background-image: url(../img/radar.jpeg);
+}
+.img-8{
+    background-image: url(../img/mixdaily.jpeg);
+}
+.img-9{
+    background-image: url(../img/youg.jpeg);
+    border-radius: 50%;
+}
+.img-10{
+    background-image: url(../img/einaudi.jpeg);
+    border-radius: 50%;
 }
 /*--- FOOTER ---*/
 footer i{
@@ -131,6 +228,10 @@ footer > div{
     border-radius: 50%;
     height: 12px;
 }
+.center-player .bar:hover > div,.right-player .bar:hover > div{
+    background-color: yellowgreen;
+}
+
 /* ELEMENTO POSTO A SINISTRA */
 
 .left-player img{
@@ -148,9 +249,17 @@ footer > div{
 .left-player > div > div >div:last-child{
     font-size: 10px;
 }
+.left-player div > i{ 
+    color: gray;
+}
+.left-player div > i:hover{ 
+    color: white;
+}
+
 /* ELEMENTO CENTRALE */
 .center-player > div{
     width: 100%;
+    min-width: 20%;
     display: flex;
     flex-direction: column; 
     align-items: center; 
@@ -167,7 +276,10 @@ font-size: 14px;
 .fa-play-circle{
     font-size: 25px;
 }
+.fa-play-circle:hover{
+    font-size: 30px;
+}
 /* ELEMENTO POSTO A DESTRA */
-footer .col-xs-2:last-child{
+footer .col-lg-2:last-child{
     justify-content: flex-end;
 }
