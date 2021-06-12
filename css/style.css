@@ -6,7 +6,6 @@
 .row-column{
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 60px);
 }
 footer{
     position: fixed;
@@ -28,19 +27,18 @@ footer{
 }
 .col-lg-10 .container-fluid {
     overflow-y: scroll;
-    height: calc(100% - 60px);
     background-color: rgb(20, 25, 34);
     padding: 10px;
+    height: calc(100vh - 60px);
 }
 /*--- NAV-BAR POSTA A SINISTRA ---*/
-header > .row > .col-lg-2{
+
+header > .row > .row-column{
     background-color: black;
-    display: flex;
-    flex-direction: column;
     justify-content: space-between; 
     font-size: 13px;
+    height: calc(100vh - 60px);
     color: gray;
-    padding:10px ;
 }
 /* LAYOUT COMUNI NAV-BAR */
 ul{
@@ -50,12 +48,11 @@ li {
     margin: 10px 0;
 }
 .nav-bar-top li,.nav-bar-bottom{
-    margin: 10px 0 0 0;
     padding:0 20px 0 20px;
+    min-width: 154px;
 }
 /* PARTE SUPERIORE DELLA NAV-BAR */
 .nav-bar-top img {
-    margin:0 0 20px 20px;
     height: 40px;
 }
 .nav-bar-top i {
@@ -66,6 +63,10 @@ li {
     color: white;
     border-left: 1px solid greenyellow;
 }    
+.nav-bar-top ul:first-of-type li:first-child + li{
+    border-left: 1px solid rgba(0, 0, 0, 0);
+}    
+
 .nav-bar-top ul:last-child li:first-child{
     color: white;
     font-size: 18px;
@@ -109,7 +110,10 @@ li {
     font-size: 17px;
 }
 /*--- CONTENUTO DELLA PAGINA ---*/
-.container-fluid  ul{
+.album{
+    padding: 0 15px;
+}
+.container-fluid > ul{
     display: flex;
     justify-content: center;
     color: gray;
@@ -123,12 +127,14 @@ li:hover{
     color: white;
 }
 .album > div[class^="img-"]{
-    height: 12vw;
-    width: 12vw;
+    width: 165px;
+    height: 165px;
     background-size: cover;
 }
 .playlist .title{
     color: white;
+    font-size: 25px;
+    margin: 20px 0;
 }
 div[class^="img-"]:hover > div{
     background-color: rgba(0, 0, 0, 0.5);
@@ -149,6 +155,7 @@ header .fa-play-circle{
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 100%;
 }
 .album > div[class^="img-"] + div{
     padding: 12px;
@@ -219,17 +226,20 @@ footer > div{
 }
 .bar > div:first-child{
     background-color: white;
-    width: 10%;
+    width: 30%;
     height: 100%;
 }
 .bar > div:last-child{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0);
     width: 12px;
     border-radius: 50%;
     height: 12px;
 }
-.center-player .bar:hover > div,.right-player .bar:hover > div{
+.bar:hover > div:first-child{
     background-color: yellowgreen;
+}
+.bar:hover > div:last-child{
+    background-color: white;
 }
 
 /* ELEMENTO POSTO A SINISTRA */
@@ -241,6 +251,7 @@ footer > div{
 .left-player{
     display: flex;
     justify-content: space-between;
+    flex-grow: 1;
 }
 .left-player > div{
     display: flex;
@@ -257,15 +268,14 @@ footer > div{
 }
 
 /* ELEMENTO CENTRALE */
-.center-player > div{
-    width: 100%;
-    min-width: 20%;
-    display: flex;
-    flex-direction: column; 
+
+.center-player > .row-column{
     align-items: center; 
+    flex-grow: 2;
 }
 .center-player > div > div{
     width: 50%;
+    min-width: 20%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -279,7 +289,31 @@ font-size: 14px;
 .fa-play-circle:hover{
     font-size: 30px;
 }
-/* ELEMENTO POSTO A DESTRA */
-footer .col-lg-2:last-child{
+.center-player .col-xs-2:first-child{
+    display: flex; 
     justify-content: flex-end;
+}
+/* ELEMENTO POSTO A DESTRA */
+footer .col-sm-2:last-child{
+    justify-content: flex-end;
+}
+/* RESPONSIVE */
+@media only screen and (max-width: 575px){
+    .col-xs-1 span{
+         opacity: 0;
+
+    }
+    .col-xs-1 li, .nav-bar-bottom{
+        padding:0 2vh;
+    }
+    .nav-bar-top i {
+        font-size: 15px;
+    }
+    .nav-bar-top img {
+        height:8vw;
+    }
+    .nav-bar-bottom div:last-child i{
+        font-size: 4vw;
+    }
+    
 }
